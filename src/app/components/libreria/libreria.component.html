@@ -1,0 +1,23 @@
+<h1>LIBRERIA DE COMICS</h1>
+<form #modificarForm="ngForm">
+    <label>Nombre:</label>
+    <input type="text"
+        name="cajanombre"
+        #cajanombre/> <br/>
+    <label>Imagen:</label>
+    <input type="text"
+        name="cajaimagen"
+        #cajaimagen/> <br/>
+    <label>Descripción:</label>
+    <input type="text"
+        name="cajadescripcion"
+        #cajadescripcion/> <br/>
+    <button (click)="insertarComic()" class="btn btn-primary">
+        Insertar Comic
+    </button>
+</form>
+<div *ngFor="let comic of comics; let i = index">
+    <app-comic [comic]="comic"
+        (eliminarComic)="eliminarComic($event)"
+    ></app-comic>
+</div>
