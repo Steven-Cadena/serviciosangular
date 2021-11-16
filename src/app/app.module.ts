@@ -9,11 +9,22 @@ import { LibreriaComponent } from './components/libreria/libreria.component';
 import { ComicComponent } from './components/comic/comic.component';
 import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { ComicsinyeccionComponent } from './components/comicsinyeccion/comicsinyeccion.component';
 
 
+//importamos esto para el servicio y lo ponemos dentro de los imports
+import {HttpClientModule} from '@angular/common/http';
 
-//importar para los formularios
+//importar comicservice para ponerlo en providers
+import { ComicsService } from './services/comics.service';
+import { ServicePersonas } from './services/servicepersonas';
+import { ServiceEmpleados } from './services/empleado.service';
+
+//importar para los formularios para ponerlo en los imports
 import { FormsModule } from '@angular/forms';
+import { PersonasapiComponent } from './components/personasapi/personasapi.component';
+import { EmpleadossalarioComponent } from './components/empleadossalario/empleadossalario.component';
+
 
 @NgModule({
   declarations: [
@@ -21,13 +32,20 @@ import { FormsModule } from '@angular/forms';
     LibreriaComponent,
     ComicComponent,
     HomeComponent,
-    MenuComponent
+    MenuComponent,
+    ComicsinyeccionComponent,
+    PersonasapiComponent,
+    EmpleadossalarioComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,FormsModule,
     routing
   ],
-  providers: [appRoutingProviders],
+  providers: [appRoutingProviders,
+    ComicsService,
+    ServicePersonas,
+    ServiceEmpleados], //inyectamos el service para que funcione ne todos los component
   bootstrap: [AppComponent]
 })
 export class AppModule { }

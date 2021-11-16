@@ -1,17 +1,17 @@
 <h1>LIBRERIA DE COMICS</h1>
 <hr/>
 <div *ngIf="favorito" style="background-color: aqua;">
-    <h1>{{favorito.nombre}}</h1>
+    <h1>{{favorito.titulo}}</h1>
     <img src="{{favorito.imagen}}" style="width: 150px;"/>
     <p>Descripción:{{favorito.descripcion}}</p>
 </div>
 <hr/>
 <!-- formulario para insertar un nuevo comic -->
 <form #modificarForm="ngForm">
-    <label>Nombre:</label>
+    <label>Titulo:</label>
     <input type="text"
-        name="cajanombre"
-        #cajanombre/> <br/>
+        name="cajatitulo"
+        #cajatitulo/> <br/>
     <label>Imagen:</label>
     <input type="text"
         name="cajaimagen"
