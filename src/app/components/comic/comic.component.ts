@@ -7,13 +7,24 @@ import { Comic } from 'src/app/models/comic';
   styleUrls: ['./comic.component.css']
 })
 export class ComicComponent implements OnInit {
-  @Input() comic!: Comic; // aqui recibimos el objeto de comic del padre
+  @Input() comic!: Comic; // aqui recibimos el objeto de comic del padre y podemos dibujarlo
+  @Input() index!: number;
   public comics : Array<Comic>;
-  @Output() eliminarComic: EventEmitter<any> = new EventEmitter();//aqui recibimos la funcion del padre
-  
-  eliminarComicHijo(): void{
-    this.eliminarComic.emit();
+  @Output() seleccionarFavorito: EventEmitter<any> = new EventEmitter();//aqui recibimos la funcion del padre de seleccionar favorito
+  @Output() eliminarComic: EventEmitter<any> = new EventEmitter();//aqui recibimos la funcion de eliminar del padre
+  @Output() modificarComic: EventEmitter<any> = new EventEmitter();
+
+  modificarComicHijo(): void{
+    this.modificarComic.emit(this.index);
   }
+  eliminarComicHijo(): void{
+    this.eliminarComic.emit(this.index);
+  }
+  seleccionarFavoritoHijo(): void{
+    this.seleccionarFavorito.emit(this.comic);
+    //this.seleccionarFavorito.emit({comic : this.comic, saludo: "hola"}); otra opcion para mandar mas datos 
+  }
+
   constructor() { 
     this.comics = [
       new Comic(

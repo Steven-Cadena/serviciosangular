@@ -5,6 +5,7 @@ import { LibreriaComponent } from './components/libreria/libreria.component';
 
 
 const appRoutes: Routes = [
+    {path:"",component: HomeComponent},
     {path:"home",component: HomeComponent},
     {path:"libreria",component: LibreriaComponent},
 ];

@@ -1,4 +1,12 @@
 <h1>LIBRERIA DE COMICS</h1>
+<hr/>
+<div *ngIf="favorito" style="background-color: aqua;">
+    <h1>{{favorito.nombre}}</h1>
+    <img src="{{favorito.imagen}}" style="width: 150px;"/>
+    <p>Descripción:{{favorito.descripcion}}</p>
+</div>
+<hr/>
+<!-- formulario para insertar un nuevo comic -->
 <form #modificarForm="ngForm">
     <label>Nombre:</label>
     <input type="text"
@@ -17,7 +25,10 @@
     </button>
 </form>
 <div *ngFor="let comic of comics; let i = index">
-    <app-comic [comic]="comic"
+    <!-- aqui pasamos las fiunciones del padre al hijo -->
+    <app-comic [comic]="comic" [index]="i"
+        (modificarComic)="modificarComic($event)"
         (eliminarComic)="eliminarComic($event)"
+        (seleccionarFavorito)="seleccionarFavorito($event)"
     ></app-comic>
 </div>

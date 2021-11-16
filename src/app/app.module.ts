@@ -1,3 +1,4 @@
+//importante importar para el router menu
 import { routing, appRoutingProviders} from './app.routing';
 
 import { NgModule } from '@angular/core';
