@@ -15,7 +15,6 @@ export class EmpleadosoficioComponent implements OnInit {
   @ViewChild("cajaselect") cajaselect!:ElementRef;
   constructor(private _service:ServiceEmpleados2) { }
 
-  
   cargarSelect(){
     this._service.getEmpleadosOficios().subscribe(response =>{
       this.oficios = response;
@@ -28,6 +27,8 @@ export class EmpleadosoficioComponent implements OnInit {
 
   mostrarEmpleados(){
     this.selectOficio = this.cajaselect.nativeElement.value;
-    
+    this._service.getEmpleados(this.selectOficio).subscribe(response =>{
+      this.personas = response;
+    })
   }
 }

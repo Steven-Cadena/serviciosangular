@@ -1,9 +1,9 @@
 <h1>Seleccione un oficio:</h1>
 <form #formoficio="ngForm">
-    <select>
-        <option *ngFor="let oficio of oficios;" value="{{oficio}}"
-            name="cajaselect"
-            #cajaselect        >
+    <select 
+        name="cajaselect"
+        #cajaselect>
+        <option *ngFor="let oficio of oficios;" value="{{oficio}}">
             {{oficio}}
         </option>
     </select>
@@ -13,6 +13,24 @@
         Mostrar Empleados
     </button>
 </form>
+
+
+<table *ngIf="personas">
+    <thead>
+        <th>Id empleado</th>
+        <th>Apellido</th>
+        <th>Oficio</th>
+        <th>Salario</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let persona of personas">
+            <td>{{persona.idEmpleado}}</td>
+            <td>{{persona.apellido}}</td>
+            <td>{{persona.oficio}}</td>
+            <td>{{persona.salario}}</td>
+        </tr>
+    </tbody>
+</table>
 
 
 

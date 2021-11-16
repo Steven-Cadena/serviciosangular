@@ -16,7 +16,7 @@ export class ServiceEmpleados2{
     }
 
     getEmpleados(oficio: string): Observable<any>{
-        var request = "";
+        var request = "api/Empleados/EmpleadosOficio/" + oficio;
         var url = Global.urlapiempleados + request;
         return this._http.get(url);
     }
