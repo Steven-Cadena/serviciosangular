@@ -1,0 +1,18 @@
+<h1>Seleccione un oficio:</h1>
+<form #formoficio="ngForm">
+    <select>
+        <option *ngFor="let oficio of oficios;" value="{{oficio}}"
+            name="cajaselect"
+            #cajaselect        >
+            {{oficio}}
+        </option>
+    </select>
+    <br/>
+    <br/>
+    <button (click)="mostrarEmpleados()" class="btn btn-danger">
+        Mostrar Empleados
+    </button>
+</form>
+
+
+

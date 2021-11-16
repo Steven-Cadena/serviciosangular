@@ -19,11 +19,13 @@ import {HttpClientModule} from '@angular/common/http';
 import { ComicsService } from './services/comics.service';
 import { ServicePersonas } from './services/servicepersonas';
 import { ServiceEmpleados } from './services/empleado.service';
+import { ServiceEmpleados2 } from './services/empleados2.service';
 
 //importar para los formularios para ponerlo en los imports
 import { FormsModule } from '@angular/forms';
 import { PersonasapiComponent } from './components/personasapi/personasapi.component';
 import { EmpleadossalarioComponent } from './components/empleadossalario/empleadossalario.component';
+import { EmpleadosoficioComponent } from './components/empleadosoficio/empleadosoficio.component';
 
 
 @NgModule({
@@ -35,7 +37,8 @@ import { EmpleadossalarioComponent } from './components/empleadossalario/emplead
     MenuComponent,
     ComicsinyeccionComponent,
     PersonasapiComponent,
-    EmpleadossalarioComponent
+    EmpleadossalarioComponent,
+    EmpleadosoficioComponent
   ],
   imports: [
     HttpClientModule,
@@ -45,7 +48,8 @@ import { EmpleadossalarioComponent } from './components/empleadossalario/emplead
   providers: [appRoutingProviders,
     ComicsService,
     ServicePersonas,
-    ServiceEmpleados], //inyectamos el service para que funcione ne todos los component
+    ServiceEmpleados,
+    ServiceEmpleados2], //inyectamos el service para que funcione ne todos los component
   bootstrap: [AppComponent]
 })
 export class AppModule { }
