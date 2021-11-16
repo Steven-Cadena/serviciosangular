@@ -70,6 +70,9 @@ export class LibreriaComponent implements OnInit {
   eliminarComic(event:number): void{
     console.log(event);
     this.comics.splice(event,1);
+    // if(this.favorito.nombre == this.comics[event].nombre){
+      
+    // }
   }
 
   seleccionarFavorito(event:Comic): void{
