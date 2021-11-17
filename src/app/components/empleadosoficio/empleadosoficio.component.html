@@ -1,5 +1,5 @@
-<h1>Seleccione un oficio:</h1>
-<form #formoficio="ngForm">
+<h1 class="text-center">Seleccione un oficio:</h1>
+<form #formoficio="ngForm" class="text-center">
     <select 
         name="cajaselect"
         #cajaselect>
@@ -12,11 +12,12 @@
     <button (click)="mostrarEmpleados()" class="btn btn-danger">
         Mostrar Empleados
     </button>
+    <br/><br/>
 </form>
 
 
-<table *ngIf="personas">
-    <thead>
+<table *ngIf="personas" class="table table-danger text-center" style="width: 500px; margin: 0 auto;">
+    <thead class="table-dark">
         <th>Id empleado</th>
         <th>Apellido</th>
         <th>Oficio</th>
