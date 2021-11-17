@@ -1,0 +1,10 @@
+<h1 style="color: red;"> Detalles empleado Routing</h1>
+<a class="btn btn-info" [routerLink]="['/listadoempleados']">
+    Volver al listado
+</a>
+<dl *ngIf="empleado">
+    <dt>Apellido: {{empleado.apellido}}</dt>
+    <dd>Oficio: {{empleado.oficio}}</dd>
+    <dd>Salario: {{empleado.salario}}</dd>
+    <dd>Departamento: {{empleado.departamento}}</dd>
+</dl>

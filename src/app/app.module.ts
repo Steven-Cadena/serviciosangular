@@ -26,6 +26,8 @@ import { FormsModule } from '@angular/forms';
 import { PersonasapiComponent } from './components/personasapi/personasapi.component';
 import { EmpleadossalarioComponent } from './components/empleadossalario/empleadossalario.component';
 import { EmpleadosoficioComponent } from './components/empleadosoficio/empleadosoficio.component';
+import { ListadoempleadosComponent } from './components/listadoempleados/listadoempleados.component';
+import { DetalleempleadosComponent } from './components/detalleempleados/detalleempleados.component';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import { EmpleadosoficioComponent } from './components/empleadosoficio/empleados
     ComicsinyeccionComponent,
     PersonasapiComponent,
     EmpleadossalarioComponent,
-    EmpleadosoficioComponent
+    EmpleadosoficioComponent,
+    ListadoempleadosComponent,
+    DetalleempleadosComponent
   ],
   imports: [
     HttpClientModule,
